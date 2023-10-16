@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "author": "Ian Connor",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      {
+        "type": "wokwi-neopixel-matrix",
+        "id": "neopixels",
+        "top": -58.17,
+        "left": -109.55,
+        "attrs": { "rows": "1", "cols": "60", "matrixLayout": "serpentine" }
+      }
+    ],
+    "connections": [ 
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ], 
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "neopixels:DIN", "esp:D15", "green", [ "v230", "h122", "v21" ] ],
+      [ "neopixels:VCC", "esp:3V3", "red", [ "v28", "h138", "v44" ] ],
+      [ "neopixels:GND", "esp:GND.1", "black", [ "v0" ] ] ],
+    "dependencies": {}
+  }
